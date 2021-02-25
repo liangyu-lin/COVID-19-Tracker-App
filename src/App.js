@@ -11,7 +11,7 @@ import InfoBox from "./InfoBox";
 import MapContainer from "./MapContainer";
 import Table from "./Table";
 import { sortData, prettyPrintStat } from "./util";
-import LineGraph from "./LineGraph";
+
 import "leaflet/dist/leaflet.css";
 import "./InfoBox.css";
 
@@ -109,7 +109,7 @@ function App() {
             active={casesType === "cases"}
             className='infoBox__cases'
             onClick={(e) => setCasesType("cases")}
-            title='Coronavirus Cases'
+            title='COVID-19 Cases'
             total={prettyPrintStat(countryInfo.cases)}
             cases={prettyPrintStat(countryInfo.todayCases)}
             isloading={isLoading}
@@ -147,8 +147,6 @@ function App() {
         <CardContent>
           <h3>Live Cases by Country</h3>
           <Table countries={tableData} />
-          <h3 className='app__graphTitle'>WorldWide new {casesType}</h3>
-          <LineGraph className='app__graph' casesType={casesType} />
         </CardContent>
         {/* Table */}
         {/* Graph */}
